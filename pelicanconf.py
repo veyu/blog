@@ -3,7 +3,8 @@
 from __future__ import unicode_literals
 
 AUTHOR = 'veyu'
-SITENAME = 'blog'
+PROFILE_IMAGE = 'avatar_200.png'
+SITENAME = "dev remorses"
 SITEURL = ''
 
 PATH = 'content'
@@ -39,5 +40,13 @@ PAGE_URL = "pages/{slug}.html"
 PAGE_SAVE_AS = "pages/{slug}.html"
 
 DEFAULT_DATE_FORMAT = '%d %B %Y'
+
+STATIC_PATHS = [ "images",
+                 "extra/favicon.ico"]
+
+EXTRA_PATH_METADATA = {
+    'extra/favicon.ico': { 'path': 'favicon.ico' }
+}
+
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
