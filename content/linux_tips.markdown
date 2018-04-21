@@ -1,6 +1,6 @@
 Title: Linux tips
 Date: 2018-04-21 00:47
-Modified: 2018-04-21 00:47
+Modified: 2018-04-21 13:10
 Category: cheatsheets
 Tags: linux, cheatsheet, command line, terminal
 Authors: veyu
@@ -29,38 +29,72 @@ R = C-u      C-w                           C-k
 `C-m` Enter  
 `C-z` Suspend process  
 
-## Diff command
+## Useful commands
+
+### diff
 ```bash
-diff [OPTIONS] FILE FILE
+diff -rNu FILE1 FILE2 # recursive unified diff
 ```
 |Options                     |Ignore options       |
 | -------------------------- | ------------------- |
 |`-q` reports only different |`-B` blank line      |
-|`-s` report identical       |`-b` whitespaces     |
+|`-s` report identical files |`-b` whitespaces     |
 |`-y` side by side           |`-Z` trailing spaces |
-|`-N` absent as empty        |`-E` tab expansion   |
-|                            |`-w` all whitespaces |
+|`-N` absent files as empty  |`-E` tab expansion   |
+|`-r` recursively            |`-w` all whitespaces |
+|`-u` unified diff           | |
 
-
-## Useful commands
+### du
 ```bash
 du -h DIR # size of all subdirs in DIR
 du -sh DIR # size of directory
 du -sch DIR/* # size of everything in DIR
 ```
-`-c` show cumulative  
-`-s` show summarized size  
+`-c` show cumulative
+`-s` show summarized size
 `-h` human readable
+
+### tar
 ```bash
-tar -tf FILE # list files in FILE archive
-tar -tvf FILE # long list
-tar -zxvf FILE # uncompress and extract for .tar.gz
-tar -xvf FILE # extract for .tar
-tar -cxvf FILE # compress and zip to tar.gz
+tar -tf ARCHIVE # list files in ARCHIVE
+tar -tvf ARCHIVE # long list
+tar -zxvf ARCHIVE # uncompress and extract tar.gz ARCHIVE
+tar -xvf ARCHIVE # extract tar ARCHIVE
+tar -cxvf ARCHIVE FILES # compress and zip FILES to tar.gz ARCHIVE
 ```
-`-t` list  
-`-f FILE` use file FILE  
-`-x` extract  
-`-z` use gzip  
-`-c` create new archive  
+`-t` list
+`-f ARCHIVE` ARCHIVE name
+`-x` extract
+`-z` use gzip
+`-c` create new archive
 `-v` verbose
+
+### awk
+```bash
+awk -F'/' '{print $0,$NF}'
+```
+`-F` separator
+`$0` whole line `$1` first column `$NF` last column
+
+### sed
+```bash
+sed -i 's/regexp/dest/' [FILE]
+```
+`-i` in place
+`-E regexp` use extended regexp
+
+### rsync
+```bash
+rsync -avhz SRC DEST
+```
+`-r` recursive
+`-l` symlinks as symlinks
+`-p` preserve permissions
+`-t` preserve times
+`-g` preserve group
+`-o` preserve owner
+`-D` preserve device files and special files
+`-z` compress
+`-h` human readable  
+`-a => -rlptgoD`
+
