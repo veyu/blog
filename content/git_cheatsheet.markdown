@@ -93,7 +93,7 @@ git log --S<phrase>
 ```
 
 #### General
-Add file to index without it's content:
+Add file to unstaged without it's content:
 ```bash
 git add -N <filename>
 ```
@@ -102,7 +102,7 @@ Add part of file to staged changes:
 git add --patch <filename>
 git add -p <filename>
 ```
-Add all unstages file to staged changes:
+Add all unstaged files to staged:
 ```bash
 git add -u
 ```
