@@ -60,7 +60,7 @@ tar -tf ARCHIVE # list files in ARCHIVE
 tar -tvf ARCHIVE # long list
 tar -zxvf ARCHIVE # uncompress and extract tar.gz ARCHIVE
 tar -xvf ARCHIVE # extract tar ARCHIVE
-tar -cxvf ARCHIVE FILES # compress and zip FILES to tar.gz ARCHIVE
+tar -zcvf ARCHIVE FILES # compress and zip FILES to tar.gz ARCHIVE
 ```
 `-t` list
 `-f ARCHIVE` ARCHIVE name

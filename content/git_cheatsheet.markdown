@@ -83,13 +83,17 @@ Git blame for lines 150 to 160 in file:
 ```bash
 git blame -L 150,160 -- <filename>
 ```
-Find all commits where commit message contains given word:
+Find all commits where commit message contains given regexp:
 ```bash
-git log --grep=<word>
+git log --grep=<regexp>
 ```
-Find all commits where "phrase" was added or removed in file:
+Find all commits where changed lines contain given regexp:
 ```bash
-git log --S<phrase>
+git log -G<regexp>
+```
+Find all commits where "phrase" occurence count has changed:
+```bash
+git log -S<phrase>
 ```
 
 #### General
