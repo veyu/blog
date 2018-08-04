@@ -1,8 +1,8 @@
 Title: Git cheatsheet
 Date: 2018-04-16 18:47
-Modified: 2018-04-16 18:47
+Modified: 2018-08-04 17:07
 Category: cheatsheets
-Tags: git, cheatsheet
+Tags: git, cheatsheet, vcs
 Authors: veyu
 Summary: Helpfull git snipets and commands
 
@@ -109,6 +109,10 @@ git add -p <filename>
 Add all unstaged files to staged:
 ```bash
 git add -u
+```
+Show reference of last common ancestor for branches:
+```bash
+git merge-base <branch1> <branch2>
 ```
 In case of unpacker error:
 ```bash
